@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lecteur Deezer — Mini App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+
+    <header class="top">
+      <h1>Lecteur Deezer (previews)</h1>
+
+      <form id="search-form" class="search">
+        <input id="query" type="search" placeholder="Rechercher un artiste, un titre..." required />
+        <button type="submit">Rechercher</button>
+      </form>
+
+      <button id="back-btn" class="back-btn" style="display:none">⟵ Retour à la recherche</button>
+
+      <p class="hint">Utilise l'API Deezer — extraits de 30 secondes.</p>
+    </header>
+
+    <!-- PLAYER -->
+    <section class="player-area">
+      <div class="player-card" id="player-card" aria-hidden="true">
+        <img id="player-cover" src="" alt="Cover" />
+        <div class="player-controls">
+
+          <div class="track-info">
+            <div id="player-title" class="title">—</div>
+            <div id="player-artist" class="artist">—</div>
+          </div>
+
+          <div class="controls">
+            <button id="prev-btn">⟨⟨</button>
+            <button id="play-btn">▶</button>
+            <button id="next-btn">⟩⟩</button>
+          </div>
+
+          <div class="progress-row">
+            <span id="current-time">0:00</span>
+            <input id="progress" type="range" min="0" max="100" value="0" />
+            <span id="duration">0:00</span>
+          </div>
+
+          <div class="volume-row">
+            <label for="volume">🔊</label>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results" id="results-section">
+      <h2>Résultats</h2>
+      <div id="tracks" class="tracks-grid"></div>
+      <div id="no-results" class="muted">Entrez une recherche pour commencer.</div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
